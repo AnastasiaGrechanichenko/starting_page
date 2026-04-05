@@ -1,0 +1,157 @@
+.header {
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.header-top {
+    display: flex;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    align-items: center;
+    justify-content: space-between;
+    gap:30px;
+    flex-wrap: wrap;
+    
+}
+.header-left {
+    display: flex;
+    align-items: center;
+    gap:20px;
+}
+.geolocation {
+    display: flex;
+    align-items: 5px;
+    gap: 5px;
+    cursor: pointer;
+    padding: 8px 12px;
+    background: #f5f5f5;
+    border-radius: 8px;
+    font-size: 14px;
+}
+.logo-image {
+    height: 85px;
+    width: auto;
+    display: block;
+}
+
+.header-center {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    max-width: 700px;
+}
+.catalog {
+    background: #1a1a2e;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.catalog:hover {
+    background: #2d2d44;
+}
+
+.search {
+    flex: 1;
+    display: flex;
+}
+
+.search-input {
+    flex: 1;
+    padding: 12px 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px 0 0 8px;
+    font-size: 15px;
+}
+.search-input:focus {
+    border-color: #1a1a2e;
+}
+
+.search-btn {
+    display: flex;
+    padding: 12px 20px;
+    background-color: #1a1a2e;
+    color: white;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.search-btn:hover {
+  background: #2d2d44;
+}
+
+.search-btn svg {
+    width: 18px;
+    height: 18px;
+    fill: white;
+}
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icon-btn {
+    display: flex;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+}
+.icon-btn:hover {
+  background: #f5f5f5;
+}
+.icon-btn svg {
+    width : 22px;
+    height: 22px;
+    fill: #333;
+}
+.icon-btn:hover svg {
+  fill: #1a1a2e;
+}
+.cart {
+    position: relative;
+}
+
+.header-bottom {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 12px 20px;
+}
+
+.navigation-list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navigation-list li a {
+    display: inline-block;
+    color: #333;
+    text-decoration: none;
+    font-size: 15px;
+    padding: 5px 0; 
+}
+.social-link {
+  color: #1a1a2e;
+  font-weight: 500;
+}
+
+
+
