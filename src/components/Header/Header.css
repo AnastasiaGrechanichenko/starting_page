@@ -3,6 +3,7 @@
     position: sticky;
     top: 0;
     z-index: 1000;
+    border-bottom: 1px solid #e0e0e0;
 }
 .header-top {
     display: flex;
@@ -124,6 +125,11 @@
     position: relative;
 }
 
+.header-bottom-wrapper {
+     background-color: #fafafa;
+     border-top: 1px solid #f0f0f0;
+
+}
 .header-bottom {
     max-width: 1400px;
     margin: 0 auto;
@@ -153,5 +159,10 @@
   font-weight: 500;
 }
 
+.header-bottom {
+  background-color: #fafafa;
+  border-top: 1px solid #f0f0f0;
+  flex: 1;
+}
 
 

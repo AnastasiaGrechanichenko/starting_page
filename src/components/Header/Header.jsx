@@ -36,22 +36,21 @@ export default function Header() {
                 </button>
             </div>
         </div>
-        <div className='header-bottom'>
-            <nav >
-                <ul className='navigation-list'>
-                    <li><a href='#'>О нас </a></li>
-                    <li><a href='#'>Доставка и оплата</a></li>
-                    <li><a href='#'>Скидки</a></li>
-                    <li><a href='#'>Новинки</a></li>
-                    <li><a href='#'>Контакты</a></li>
-                    <li><a href='#' className='social-link'>Мы в соцсетях</a></li>
-                    <li className='geolocation'><a href='#'>📍Москва </a></li>
-                </ul>
-            </nav>
-        </div>
-
-        
-      
+        <div className='header-bottom-wrapper'>
+            <div className='header-bottom'>
+                <nav >
+                    <ul className='navigation-list'>
+                        <li><a href='#'>О нас </a></li>
+                        <li><a href='#'>Доставка и оплата</a></li>
+                        <li><a href='#'>Скидки</a></li>
+                        <li><a href='#'>Новинки</a></li>
+                        <li><a href='#'>Контакты</a></li>
+                        <li><a href='#' className='social-link'>Мы в соцсетях</a></li>
+                        <li className='geolocation'><a href='#'>📍Москва </a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div> 
     </header>
-  )
+  );
 }
