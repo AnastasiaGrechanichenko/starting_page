@@ -1,23 +1,27 @@
 import React from 'react'
 import './Main.css'
-
-import BigBanner from './BigBanner/BigBanner'
 import BonusCard from './BonusCard/BonusCard';
 import NanoBanners from './NanoBanners/NanoBanners';
 import ProductShelf from './ProductShelf/ProductShelf';
+import {novelty2026} from '../../data';
+import { animeBooks } from '../../data';
+import { studyBooks } from '../../data';
+
 
 export default function Main() {
   return (
     <main className='homepage'>
+      <ProductShelf title ='Новинки 2026' products = {novelty2026}/>
+      <ProductShelf title ='Аниме' products = {animeBooks}/>
+      <ProductShelf title ='Учебная литература' products = {studyBooks}/>
       <div className='top-main'>
-        <BigBanner/>
         <aside className='top-main aside'>
           <BonusCard/>
           <NanoBanners/>
         </aside>
       </div>
 
-      <ProductShelf title ='Новинки'/>
+
     </main>
   )
 }
