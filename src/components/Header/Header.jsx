@@ -43,10 +43,12 @@ export default function Header() {
                         <li><a href='#'>О нас </a></li>
                         <li><a href='#'>Доставка и оплата</a></li>
                         <li><a href='#'>Скидки</a></li>
-                        <li><a href='#'>Новинки</a></li>
-                        <li><a href='#'>Контакты</a></li>
+                        <li><a href='#'>Подарочные сертификаты</a></li>
+                        <li><a href='#'>Другое</a></li>
                         <li><a href='#' className='social-link'>Мы в соцсетях</a></li>
                         <li className='geolocation'><a href='#'>📍Москва </a></li>
+                        <li className='number'> +7 (999) 123-45-67</li>
+
                     </ul>
                 </nav>
             </div>
