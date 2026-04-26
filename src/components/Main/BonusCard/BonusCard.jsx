@@ -9,7 +9,7 @@ export default function BonusCard() {
         <h1>Bookstore</h1>
         <p className='log-in'>Войдите в личный кабинет</p>
         <p className='cashback'>Гарантированный кэшбек до 20% </p>
-        <button className='login-button'>Войти или зарегистрироваться</button>
+        <button className='login-button'>Войти</button>
         </div>
       <img src='/card-payment.png' alt='Бонусы' className='image-right'/>
 

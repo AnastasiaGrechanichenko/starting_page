@@ -25,6 +25,14 @@
 .bonus-card {
     width: 100%;
 }
+@media (max-width:768px) {
+    .homepage {
+        padding: 16px;
+    }
+    .bonus {
+        margin-top: 30px;
+    }
+}
 
 
 

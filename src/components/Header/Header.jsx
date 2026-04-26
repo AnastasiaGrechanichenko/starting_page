@@ -22,20 +22,39 @@ export default function Header() {
 
             </div>
             <div className='header-right'>
-                <button className='icon-btn' title='Войти'>
-                    <FaUser/>
-                </button>
-                <button className='icon-btn' title='Заказы'>
-                    <FaBox/>
-                </button>
-                <button className='icon-btn'title='Избранное'>
-                    <FaHeart/>
-                </button>
-                <button className='icon-btn cart' title='Корзина'>
-                    <FaShoppingCart/>
-                </button>
+                <div className='btns'>
+                    <button className='icon-btn' title='Войти'>
+                        <FaUser/>
+                    </button>
+                    <span btns-text>Профиль</span>
+                </div>
+                <div className='btns'>
+                    <button className='icon-btn' title='Заказы'>
+                        <FaBox/>
+                    </button>
+                    <span btns-text>Заказы</span>
+                </div>
+                    <div className='btns'>
+                    <button className='icon-btn'title='Избранное'>
+                        <FaHeart/>
+                    </button>
+                    <span btns-text>Избранное</span>
+                </div>
+                <div className='btns'>
+                    <button className='icon-btn cart' title='Корзина'>
+                        <FaShoppingCart/>
+                    </button>
+                    <span btns-text>Корзина</span>
+                </div>
             </div>
         </div>
+        <div className='mob-nav-links'>
+            <a href="/stores">Наши магазины</a>
+            <a href="/discounts">Скидки</a>
+            <a href="/delivery">Доставка</a>
+        </div>
+
+
         <div className='header-bottom-wrapper'>
             <div className='header-bottom'>
                 <nav >

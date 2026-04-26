@@ -17,7 +17,7 @@
     height: auto;
     object-fit: contain;
     flex-shrink: 0;
-    transform: translateY(-90px) translateX(200px);
+    transform: translateY(10px) translateX(200px);
 }
 .content {
     flex: 1;
@@ -42,7 +42,7 @@
     cursor: pointer;
     border: none;
     font-style: italic;
-    font-size: 16px;
+    font-size: 20px;
     align-self: center;
     color: white;
 }
@@ -58,6 +58,21 @@
     height: auto;
     object-fit: contain;
     flex-shrink: 0;
-    transform: translateY(-10px) translateX(-120px);
+    transform: translateY(10px) translateX(-120px);
+}
+
+@media (max-width:768px){
+    .bonus-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+    }
+    .bonus-card .image-left,
+    .bonus-card .image-right {
+        width: 50px;
+    }
+    .bonus-card .image-right {
+        width: 60px;
+    }
 }
 

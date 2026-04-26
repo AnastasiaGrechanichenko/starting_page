@@ -44,3 +44,19 @@
     flex-shrink: 0;
     margin: 0;
 }
+
+@media(max-width:768px) {
+    .product-shelf{
+    padding-left: 12px;
+    padding-right: 12px;
+    }
+    .product-shelf-row {
+        flex-wrap: wrap;
+        overflow-x: visible;
+        gap: 12px;
+    }
+    .product-shelf-row .product-card{
+        width: calc(50%-6px);
+        flex-shrink: 1;
+    }
+}
