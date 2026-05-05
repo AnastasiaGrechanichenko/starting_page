@@ -1,7 +1,9 @@
 .product-card {
-    background: white;
-    border-radius: 12px;
-    overflow: hidden;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 .product-card:hover {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
@@ -11,13 +13,16 @@
 }
 
 .card-image {
-    width: 100%;
-    aspect-ratio: 2 / 3;
-    object-fit: cover;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
 }
 
 .card-info {
-  padding: 12px;
+  flex: 1;
+  padding: 10px;
+  padding-bottom: 10px;
+  gap: 10px;
 }
 
 .card-title {
@@ -41,6 +46,9 @@
 .buttons {
   display: flex;
   gap: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .cart-btn {
@@ -101,7 +109,3 @@
   font-weight: 700;
   color: #e74c3c;
 }
-
-
-
-
