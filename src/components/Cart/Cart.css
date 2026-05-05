@@ -25,3 +25,28 @@
   justify-content: center;
   font-weight: bolder;
 }
+.cart-items {
+  display: flex;
+  gap: 10px;
+  margin: 20px 10px 0;
+}
+.item-img {
+  flex-grow: 1;
+  border: 1px solid black;
+  height: 250px;
+}
+.item-description {
+  flex-grow: 2;
+  border: 1px solid black;
+  height: 250px;
+}
+.quantity {
+  flex: 1;
+  border: 1px solid black;
+  height: 250px;
+}
+.cost {
+  flex: 1;
+  border: 1px solid black;
+  height: 250px;
+}
