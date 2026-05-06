@@ -1,0 +1,43 @@
+.notfound-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    color: rgba(30, 30, 31, 0.305);
+    text-decoration: none;
+}
+.notfound-wrapper h2 {
+    margin: 25px;
+}
+
+.books-404 {
+    width: 200px;
+    height: 200px;
+}
+.btn-return {
+    display: flex;
+    margin-top: 20px;
+    background-color: yellow;
+    border: none;
+    border-radius: 8px;
+    width: 180px;
+    height: 45px;
+    font-weight: 700;
+    justify-content: center;
+    align-items: center;
+}
+.btn-return a {
+    text-decoration: none;
+}
+
+.numbers404{
+    font-size: 10em;
+    font-weight: bold;
+    color: black;
+}
+.center-notfound {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
