@@ -1,5 +1,6 @@
 import React from "react";
 import "./ProductCard.css";
+import useCartStore from '../../../store/useCartStore';
 
 export default function ProductCard({
   id,
@@ -10,6 +11,25 @@ export default function ProductCard({
   price,
   link,
 }) {
+  const addToCart = useCartStore((state) => state.addToCart);
+
+  const handleAddToCart = () => {
+    const book = {
+      id: id,
+      title: title,
+      author: author,
+      price: price,
+      oldPrice: oldPrice,
+      cover : image,
+      quantity: 1,
+    };
+    addToCart(book,1)
+    alert(`"${title}" добавлена в корзину`);
+    console.log('Добавляем книгу:', book);
+    console.log('Корзина после добавления:', useCartStore.getState().cartItems);
+  };
+
+
   return (
     <div className="product-card">
       <a href={link} className="title">
@@ -26,7 +46,7 @@ export default function ProductCard({
         </div>
       </div>
       <div className="buttons">
-        <button className="cart-btn">Купить</button>
+        <button className="cart-btn" onClick={handleAddToCart}>Купить</button>
         <button className="wishlist-btn">
           <img src="/favorites.png" />
         </button>

@@ -13,6 +13,7 @@ export default function ProductShelf({title,products}) {
         {products.map(product => (
           <ProductCard 
             key={product.id}
+            id = {product.id}
             image={product.image}
             title={product.title}
             author={product.author}

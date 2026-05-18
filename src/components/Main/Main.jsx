@@ -13,7 +13,6 @@ export default function Main() {
       <ProductShelf title="Новинки 2026" products={novelty2026} />
       <ProductShelf title="Аниме" products={animeBooks} />
       <ProductShelf title="Учебная литература" products={studyBooks} />
-      <Cart />
       <div className="bonus">
         <BonusCard />
       </div>

@@ -1,0 +1,34 @@
+.orders-checkout {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    max-height: 200px;
+    border: none;
+}
+.checkout-title {
+    color: rgb(242, 96, 140);
+    font-size: 27px;
+}
+.quantity-price {
+    font-size: 20px;
+
+}
+.sales  {
+     font-size: 20px;
+
+}
+.finish-price {
+     font-size: 20px;
+
+}
+
+.btn-checkout {
+    background-color: rgb(238, 154, 217);
+    width: 130px;
+    height: 30px;
+    border-radius: 12px;
+    cursor: pointer;
+    border: none;
+    font-weight: 700;
+}

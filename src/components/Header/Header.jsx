@@ -1,13 +1,17 @@
 import React from 'react'
 import './Header.css'
 import {FaUser,FaBox,FaHeart,FaShoppingCart,FaSearch} from 'react-icons/fa'
+import { Link } from 'react-router-dom';
+
 
 export default function Header() {
   return (
     <header className='header'> 
         <div className='header-top'>
             <div className='header-left'>
+                <Link to="/">
                 <img src="/logo_bookstore.png" alt="Bookstore Logo" className="logo-image" />
+                </Link>
             </div>
             <div className='header-center'>
                 <div className='catalog'>
@@ -26,26 +30,26 @@ export default function Header() {
                     <button className='icon-btn' title='Войти'>
                         <FaUser/>
                     </button>
-                    <span btns-text>Профиль</span>
+                    <span className='btns-text'>Профиль</span>
                 </div>
                 <div className='btns'>
                     <button className='icon-btn' title='Заказы'>
                         <FaBox/>
                     </button>
-                    <span btns-text>Заказы</span>
+                    <span className='btns-text'>Заказы</span>
                 </div>
                     <div className='btns'>
                     <button className='icon-btn'title='Избранное'>
                         <FaHeart/>
                     </button>
-                    <span btns-text>Избранное</span>
+                    <span className='btns-text'>Избранное</span>
                 </div>
-                <div className='btns'>
+                <Link to="/cart" className='btns'>
                     <button className='icon-btn cart' title='Корзина'>
                         <FaShoppingCart/>
                     </button>
-                    <span btns-text>Корзина</span>
-                </div>
+                    <span className='btns-text'>Корзина</span>
+                </Link>
             </div>
         </div>
         <div className='mob-nav-links'>
