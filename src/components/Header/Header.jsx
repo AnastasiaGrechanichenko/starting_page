@@ -2,6 +2,7 @@ import React from 'react'
 import './Header.css'
 import {FaUser,FaBox,FaHeart,FaShoppingCart,FaSearch} from 'react-icons/fa'
 import { Link } from 'react-router-dom';
+import DropdownCatalog from '../DropdownCatalog/DropdownCatalog';
 
 
 export default function Header() {
@@ -14,9 +15,7 @@ export default function Header() {
                 </Link>
             </div>
             <div className='header-center'>
-                <div className='catalog'>
-                    Каталог
-                </div>
+                <DropdownCatalog/>
                 <div className='search'>
                     <input type='text' placeholder='Введите название книги или автора...' className='search-input'/>
                     <button className='search-btn'>
