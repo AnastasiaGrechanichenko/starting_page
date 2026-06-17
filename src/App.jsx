@@ -1,12 +1,12 @@
 import { BrowserRouter,Routes,Route } from 'react-router-dom'
 import './App.css';
 import Layout from './components/Layout/Layout';
-import HomePage from './pages/HomePage';
-import CatalogPage from './pages/CatalogPage';
-import CartPage from './pages/CartPage';
-import FavoritesPage from './pages/FavoritesPage';
-import ProfilePage from './pages/ProfilePage';
-import NotFoundPage from './pages/NotFoundPage';
+import HomePage from './pages/HomePage/HomePage';
+import CatalogPage from './pages/CatalogPage/CatalogPage';
+import CartPage from './pages/CartPage/CartPage';
+import FavoritesPage from './pages/FavoritesPage/FavoritesPage';
+import ProfilePage from './pages/ProfilePage/ProfilePage';
+import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 
 
 
