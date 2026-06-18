@@ -1,7 +1,7 @@
 import React from 'react'
 import './CatalogPage.css'
 import allBooks from '../../catalogData'
-import { useState,useEffect } from 'react';
+import { useState,useEffect,useCallback } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import CatalogFilters from './components/CatalogFilters';
 import CatalogResults from './components/CatalogResults';
@@ -11,8 +11,10 @@ export default function CatalogPage() {
   const [searchParams] = useSearchParams();
   const [books] = useState(allBooks);
   const [filteredBooks, setFilteredBooks] = useState(allBooks)
-  const applyFilters =(filters) => {
+  const applyFilters = useCallback((filters) => {
     let result = [...books];
+    console.log('Фильтр категории:', filters.category);
+
     if (filters.category && filters.category!=='all') {
       result = result.filter(book => book.category === filters.category)
     }
@@ -32,7 +34,7 @@ export default function CatalogPage() {
       );
     }
     setFilteredBooks(result);
-  };
+  },[books]);
 
   useEffect(() => {
     const searchParam = searchParams.get('search');

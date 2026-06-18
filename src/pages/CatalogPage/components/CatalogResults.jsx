@@ -4,7 +4,7 @@ import './CatalogResults.css';
 
 export default function CatalogResults({books}) {
 
-    if (!books||books.length===0) {
+    if (!books ||books.length===0) {
         return (
             <div className="no-results">
                 <h3>По вашему запросу ничего не найдено</h3>

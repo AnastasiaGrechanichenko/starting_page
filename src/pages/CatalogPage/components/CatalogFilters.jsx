@@ -6,9 +6,10 @@ const CATEGORIES = [
     {value:'all', label:'Все категории'},
     {value:'novelty', label:'Новинки 2026'},
     {value:'anime', label:'Аниме и манга'},
-    {value:'study', label:'Учебная литература'},
-    
+    {value:'study', label:'Учебная литература'},  
 ];
+
+
 export default function CatalogFilters({onFilterChange, initialSearch = ''}) {
     const [category,setCategory] = useState('all')
     const [minPrice,setMinPrice] = useState('')
@@ -19,30 +20,23 @@ export default function CatalogFilters({onFilterChange, initialSearch = ''}) {
         setSearch(initialSearch);
     },[initialSearch]);
 
-    const handleFilterChange = () => {
-        onFilterChange({category,minPrice,maxPrice,search})
-    };
+    useEffect(()=> {
+        onFilterChange({category,minPrice,maxPrice,search});
+    }, [category,minPrice,maxPrice,search,onFilterChange]);
 
     const handleCategoryChange = (value) => {
         setCategory(value);
-        setTimeout(handleFilterChange,0);
     };
 
     const handleSearchChange = (e) => {
         setSearch(e.target.value);
-        setTimeout(handleFilterChange,200);
     };
-
-    const handlePriceChange = () => {
-        setTimeout(handleFilterChange,0)
-    }
 
     const resetFilters = () => {
         setCategory('all');
         setMinPrice('');
         setMaxPrice('');
         setSearch('');
-        onFilterChange({category:'all',minPrice:null,maxPrice:null, search:''});
     }
 
 
@@ -83,7 +77,7 @@ export default function CatalogFilters({onFilterChange, initialSearch = ''}) {
                     type='number'
                     placeholder='от'
                     value={minPrice}
-                    onChange={(e) => {setMinPrice(e.target.value);handlePriceChange();}}
+                    onChange={(e) => setMinPrice(e.target.value)}
                     className='price-input'
                     min='0'
                     />
@@ -92,7 +86,7 @@ export default function CatalogFilters({onFilterChange, initialSearch = ''}) {
                         type='number'
                         placeholder='до'
                         value={maxPrice}
-                        onChange={(e) => {setMaxPrice(e.target.value);handlePriceChange();}}
+                        onChange={(e) => setMaxPrice(e.target.value)}
                         className='price-input'
                         min = '0'
                     />
@@ -100,7 +94,7 @@ export default function CatalogFilters({onFilterChange, initialSearch = ''}) {
             </div>
             <button className='reset-filters-btn' onClick={resetFilters}>
                 Сбросить фильтры
-            </button>
+            </button>  
             </div>
         </div>
   )
