@@ -23,7 +23,7 @@
 }
 .geolocation {
     display: flex;
-    align-items: 5px;
+    align-items: center;
     gap: 5px;
     cursor: pointer;
     padding: 8px 12px;
@@ -102,6 +102,9 @@
     justify-content: center;
     gap: 10px;
 }
+.header-right a {
+    text-decoration: none;
+}
 
 .icon-btn {
     display: flex;
@@ -114,9 +117,10 @@
     height: 44px;
     align-items: center;
     justify-content: center;
+    transition: background 0.2s;
 }
 .icon-btn:hover {
-  background: #f5f5f5;
+  background: #a8c928;
 }
 .icon-btn svg {
     width : 22px;
@@ -184,7 +188,30 @@
     justify-content: center;
 }
 .btns-text {
+    font-size: 17px;
+    color: #2d2d44;
+    margin-top: 5px;
+}
+
+.user-name {
     font-size: 12px;
+    color: #333;
+    max-width: 80px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+logout-btn {
+    background: #ff4444;
+}
+
+.logout-btn:hover {
+    background: #cc0000;
+}
+
+.logout-btn svg {
+    fill: white;
 }
 
 @media (max-width:768px) {

@@ -1,6 +1,8 @@
 import React from "react";
 import "./ProductCard.css";
-import useCartStore from '../../../store/useCartStore';
+import {Link,useNavigate} from "react-router-dom"
+import {cartApi} from "../../../api/cartApi"
+import { useAuthStore } from "../../../store/useAuthStore";
 
 export default function ProductCard({
   id,
@@ -11,34 +13,31 @@ export default function ProductCard({
   price,
   link,
 }) {
-  const addToCart = useCartStore((state) => state.addToCart);
+  const isAuthenticated = useAuthStore((state)=> state.isAuthenticated);
+  const navigate = useNavigate()
 
-  const handleAddToCart = () => {
-    const book = {
-      id: id,
-      title: title,
-      author: author,
-      price: price,
-      oldPrice: oldPrice,
-      cover : image,
-      quantity: 1,
-    };
-    addToCart(book,1)
-    alert(`"${title}" добавлена в корзину`);
-    console.log('Добавляем книгу:', book);
-    console.log('Корзина после добавления:', useCartStore.getState().cartItems);
-  };
-
+  const handleAddToCart = async()=> {
+    if (!isAuthenticated) {
+      navigate('/login');
+      return;
+    }
+    try {
+    await cartApi.addItem({book_id:id,quantity:1});
+    alert (`"${title}" добавлена в корзину`);
+  } catch(err) {
+    alert(err.message ||"Ошибка при добавлении в корзину")
+  }
+};
 
   return (
     <div className="product-card">
-      <a href={link} className="title">
+      <Link tp={link} className="title">
         <img src={image} alt={title} className="card-image" />
-      </a>
+      </Link>
       <div className="card-info">
-        <a href={link} className="card-title">
+        <Link to={link} className="card-title">
           {title}
-        </a>
+        </Link>
         <p className="card-author">{author}</p>
         <div className="prices">
           <span className="card-old-price">{oldPrice} ₽</span>

@@ -1,23 +1,27 @@
 import React from 'react';
-import useCartStore from '../../../store/useCartStore';
+import { useNavigate } from 'react-router-dom';
 import './OrdersCheckout.css';
+import { orderApi} from '../../../api/orderApi'
 
-export default function OrdersCheckout() {
- 
-  const cartItems = useCartStore((state) => state.cartItems);
-  const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
-  const totalPrice = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
-  const totalDiscount = cartItems.reduce((sum, item) => {
-    if (item.oldPrice && item.oldPrice > item.price) {
-      return sum + (item.oldPrice - item.price) * item.quantity;
+export default function OrdersCheckout({items, onOrder}) {
+  const navigate = useNavigate();
+
+  const totalItems=items.reduce((sum,item)=> sum + item.quantity, 0);
+  const totalPrice = items.reduce((sum,item)=>sum + item.price*item.quantity,0);
+  const totalDiscount = items.reduce((sum, item) => sum + (item.old_price - item.price) * item.quantity,0);
+
+  const handleCheckout = async()=> {
+    if(!items.length) return;
+    try {
+      await orderApi.createOrder();
+      alert('Заказ оформлен!')
+      onOrder();
+      navigate('/orders')
+    }catch(err){
+      alert(err.message||'Ошибка при оформлении заказа')
     }
-    return sum;
-  }, 0);
-
-  const handleCheckout = () => {
-    alert('Функция оформления заказа будет добавлена позже');
   };
-
+ 
   return (
     <div className="orders-checkout">
       <h3 className="checkout-title">Ваш заказ</h3>
@@ -33,7 +37,7 @@ export default function OrdersCheckout() {
         <span>Итого:  </span>
         <span>  {totalPrice}   ₽</span>
       </div>
-      <button className="btn-checkout" onClick={handleCheckout}>Оформить</button>
+      <button className="btn-checkout" onClick={handleCheckout} disabled = {!items.length}>Оформить</button>
     </div>
   );
 }

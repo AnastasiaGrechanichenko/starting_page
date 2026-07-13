@@ -3,9 +3,17 @@ import './Header.css'
 import {FaUser,FaBox,FaHeart,FaShoppingCart,FaSearch} from 'react-icons/fa'
 import { Link } from 'react-router-dom';
 import DropdownCatalog from '../DropdownCatalog/DropdownCatalog';
+import {useAuthStore} from '../../store/useAuthStore'
 
 
 export default function Header() {
+    const isAuthenticated = useAuthStore((state)=> state.isAuthenticated);
+    const user = useAuthStore((state) => state.user);
+    const logout = useAuthStore((state) => state.logout);
+
+    const handleLogout = () => {
+        logout();
+    };
   return (
     <header className='header'> 
         <div className='header-top'>
@@ -25,32 +33,49 @@ export default function Header() {
 
             </div>
             <div className='header-right'>
-                <div className='btns'>
-                    <button className='icon-btn' title='Войти'>
-                        <FaUser/>
-                    </button>
-                    <span className='btns-text'>Профиль</span>
-                </div>
-                <div className='btns'>
-                    <button className='icon-btn' title='Заказы'>
-                        <FaBox/>
-                    </button>
-                    <span className='btns-text'>Заказы</span>
-                </div>
+                {isAuthenticated ? (
                     <div className='btns'>
-                    <button className='icon-btn'title='Избранное'>
-                        <FaHeart/>
-                    </button>
-                    <span className='btns-text'>Избранное</span>
-                </div>
-                <Link to="/cart" className='btns'>
+                        <span className='btns-text user-name'>{user?.name|| user?.login}</span>
+                        <button className='icon-btn logout-btn' onClick={handleLogout} title='Выйти'>
+                            <FaUser/>
+                        </button>
+                    </div>
+                ): (
+                    <Link to = '/login' className='btns'>
+                        <button className='icon-btn' title='Войти'>
+                            <FaUser/>
+                        </button>
+                        <span className='btns-text'>Войти</span>
+                    </Link>
+                )}
+
+                {isAuthenticated && (
+                    <Link to = '/orders' className='btns'>
+                        <button className ='icon-btn' title='Заказы'>
+                            <FaBox/>
+                        </button>
+                        <span className='btns-text'>Заказы</span>
+                    </Link>
+                )}
+
+                 {isAuthenticated && (
+                    <Link to = '/favorites' className='btns'>
+                        <button className ='icon-btn' title='Избранное'>
+                            <FaHeart/>
+                        </button>
+                        <span className='btns-text'>Избранное</span>
+                    </Link>
+                )}
+
+                <Link to = '/cart' className='btns'>
                     <button className='icon-btn cart' title='Корзина'>
                         <FaShoppingCart/>
                     </button>
                     <span className='btns-text'>Корзина</span>
                 </Link>
+              </div>
             </div>
-        </div>
+
         <div className='mob-nav-links'>
             <a href="/stores">Наши магазины</a>
             <a href="/discounts">Скидки</a>
