@@ -1,6 +1,6 @@
 import React from 'react'
 import './Header.css'
-import {FaUser,FaBox,FaHeart,FaShoppingCart,FaSearch} from 'react-icons/fa'
+import {FaUser,FaBox,FaHeart,FaShoppingCart,FaSearch,FaSignOutAlt} from 'react-icons/fa'
 import { Link } from 'react-router-dom';
 import DropdownCatalog from '../DropdownCatalog/DropdownCatalog';
 import {useAuthStore} from '../../store/useAuthStore'
@@ -34,20 +34,23 @@ export default function Header() {
             </div>
             <div className='header-right'>
                 {isAuthenticated ? (
-                    <div className='btns'>
-                        <span className='btns-text user-name'>{user?.name|| user?.login}</span>
-                        <button className='icon-btn logout-btn' onClick={handleLogout} title='Выйти'>
-                            <FaUser/>
-                        </button>
-                    </div>
-                ): (
-                    <Link to = '/login' className='btns'>
-                        <button className='icon-btn' title='Войти'>
-                            <FaUser/>
-                        </button>
-                        <span className='btns-text'>Войти</span>
-                    </Link>
-                )}
+        <div className='btns'>
+          <Link to='/profile'>
+            <button className='icon-btn profile-btn' title='Профиль'>
+                <FaUser/>
+            </button>
+            <span className='btns-text user-name'>{user?.name || user?.login}</span>
+          </Link>
+        </div>
+    ) : (
+        <Link to='/login' className='btns'>
+            <button className='icon-btn' title='Войти'>
+                <FaUser/>
+            </button>
+            <span className='btns-text'>Войти</span>
+        </Link>
+    )}
+
 
                 {isAuthenticated && (
                     <Link to = '/orders' className='btns'>
@@ -73,6 +76,17 @@ export default function Header() {
                     </button>
                     <span className='btns-text'>Корзина</span>
                 </Link>
+
+                {isAuthenticated && (
+                    <div className='btns'>
+                        <button className='icon-btn logout-btn' onClick={handleLogout} title='Выйти'>
+                            <FaSignOutAlt/>
+                        </button>
+                        <span className='btns-text'>Выйти</span>
+                </div>
+    )}
+
+
               </div>
             </div>
 

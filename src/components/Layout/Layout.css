@@ -4,6 +4,16 @@
   min-height: 100vh;
 }
 
-.app main {
+.app > header {
+  flex-shrink: 0;  /* header не сжимается */
+}
+
+.app > main {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.app > footer {
+  flex-shrink: 0;  /* footer не сжимается */
 }

@@ -194,7 +194,7 @@
 }
 
 .user-name {
-    font-size: 12px;
+    font-size: 18px;
     color: #333;
     max-width: 80px;
     overflow: hidden;
@@ -202,16 +202,16 @@
     white-space: nowrap;
 }
 
-logout-btn {
-    background: #ff4444;
+.logout-btn {
+    background: #72d3f3; 
 }
 
 .logout-btn:hover {
-    background: #cc0000;
+    background: #4fc3f7; 
 }
 
 .logout-btn svg {
-    fill: white;
+    fill: white; 
 }
 
 @media (max-width:768px) {
@@ -261,6 +261,19 @@ logout-btn {
     .mob-nav-links a:hover {
         color: #1a1a2e;
     }
+}
+
+.profile-btn {
+    background: #72d3f3; 
+    margin-bottom: 4px;
+}
+
+.profile-btn:hover {
+    background: #4fc3f7; 
+}
+
+.profile-btn svg {
+    fill: white; 
 }
 
 

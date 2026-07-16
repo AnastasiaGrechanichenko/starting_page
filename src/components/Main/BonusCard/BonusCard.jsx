@@ -1,5 +1,6 @@
 import React from 'react'
 import './BonusCard.css';
+import { Link } from 'react-router-dom';
 
 export default function BonusCard() {
   return (
@@ -9,7 +10,9 @@ export default function BonusCard() {
         <h1>Bookstore</h1>
         <p className='log-in'>Войдите в личный кабинет</p>
         <p className='cashback'>Гарантированный кэшбек до 20% </p>
-        <button className='login-button'>Войти</button>
+        <Link to="/login">
+          <button className='login-button'>Войти</button>
+        </Link>
         </div>
       <img src='/card-payment.png' alt='Бонусы' className='image-right'/>
 
