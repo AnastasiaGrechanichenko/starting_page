@@ -17,4 +17,9 @@ export const userApi = {
     }),
 
     getMe:()=> apiFetch('/users/me'),
+
+    updateProfile:(data)=>apiFetch('/users/me',{
+        method:'PATCH',
+        body:JSON.stringify(data)
+    })
 }
