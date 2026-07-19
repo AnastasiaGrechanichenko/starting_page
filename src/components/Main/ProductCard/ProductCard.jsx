@@ -16,7 +16,10 @@ export default function ProductCard({
   const isAuthenticated = useAuthStore((state)=> state.isAuthenticated);
   const navigate = useNavigate()
 
-  const handleAddToCart = async()=> {
+  const handleAddToCart = async(e)=> {
+    e.preventDefault();
+    e.stopPropagation();
+
     if (!isAuthenticated) {
       navigate('/login');
       return;
@@ -31,7 +34,7 @@ export default function ProductCard({
 
   return (
     <div className="product-card">
-      <Link tp={link} className="title">
+      <Link to={link} className="title">
         <img src={image} alt={title} className="card-image" />
       </Link>
       <div className="card-info">

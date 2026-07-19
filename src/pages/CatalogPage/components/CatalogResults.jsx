@@ -29,7 +29,7 @@ export default function CatalogResults({books}) {
                 author = {book.author}
                 oldPrice = {book.oldPrice}
                 price = {book.price}
-                link = {`/product/${book.id}`}
+                link = {`/books/${book.id}`}
                 />
             ))}
         </div>

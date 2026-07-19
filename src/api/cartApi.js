@@ -1,7 +1,7 @@
 import { apiFetch } from "./client";
 
 export const cartApi = {
-    getCart: () =>('/cart'),
+    getCart: () =>apiFetch('/cart'),
 
     addItem: (data) => apiFetch ('/cart', {
         method: 'POST',

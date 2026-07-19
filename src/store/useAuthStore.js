@@ -5,7 +5,7 @@ import { userApi } from '../api/userApi.js'
 export const useAuthStore = create((set) => ({
     user:null,
     isAuthenticated:false,
-    idLoading:false,
+    isLoading:false,
     error:null,
 
     init: async()=> {
@@ -19,7 +19,7 @@ export const useAuthStore = create((set) => ({
         set({isLoading:true});
 
         try {
-            const user = await user.getMe();
+            const user = await userApi.getMe();
             set({
                 user,
                 isAuthenticated:true,

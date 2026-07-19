@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .app {
   display: flex;
   flex-direction: column;
@@ -5,7 +11,7 @@
 }
 
 .app > header {
-  flex-shrink: 0;  /* header не сжимается */
+  flex-shrink: 0;
 }
 
 .app > main {
@@ -15,5 +21,17 @@
 }
 
 .app > footer {
-  flex-shrink: 0;  /* footer не сжимается */
+  flex-shrink: 0;
+}
+
+
+
+@media (max-width: 768px) {
+  .app > main {
+    padding: 1rem 1rem 0 1rem;
+  }
+
+  .app > footer {
+    margin-top: 1.5rem;
+  }
 }

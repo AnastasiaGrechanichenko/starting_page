@@ -48,7 +48,7 @@ export default function CartOrders({items, onUpdate}) {
     const handleRemove = async(itemId) => {
       try { 
         await cartApi.removeItem(itemId);
-        onUpdate;
+        onUpdate();
       } catch (err) {
          alert(err.message || 'Ошибка удаления')
       }
@@ -71,7 +71,7 @@ export default function CartOrders({items, onUpdate}) {
         {items.map ((item) => (
           <div key = {item.id}className="cart-items">
               <div className="item-img">
-                <img src={item.cover} alt ={item.title}/>
+                <img src={item.image} alt ={item.title}/>
               </div>
 
               <div className="item-description">

@@ -6,7 +6,7 @@ export const novelty2026 = [
     author: 'Джулиан Барнс',
     oldPrice: 890,
     price: 712,
-    link: '/product/1'
+    link: '/books/1'
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ export const novelty2026 = [
     author: 'Сергей Лукьяненко',
     oldPrice: 750,
     price: 600,
-    link: '/product/2'
+    link: '/books/2'
   },
   {
     id: 3,
@@ -24,7 +24,7 @@ export const novelty2026 = [
     author: 'Калли Харт',
     oldPrice: 890,
     price: 712,
-    link: '/product/3'
+    link: '/books/3'
   },
   {
     id: 4,
@@ -33,7 +33,7 @@ export const novelty2026 = [
     author: 'Эрик Бергер',
     oldPrice: 1200,
     price: 960,
-    link: '/product/4'
+    link: '/books/4'
   },
   {
     id: 5,
@@ -42,7 +42,7 @@ export const novelty2026 = [
     author: 'Рина Кент',
     oldPrice: 650,
     price: 520,
-    link: '/product/3'
+    link: '/books/5'
   },
 ];
 
@@ -54,7 +54,7 @@ export const animeBooks = [
     author: 'Макото Синкай',
     oldPrice: 1200,
     price: 990,
-    link: '/product/6'
+    link: '/books/6'
   },
   {
     id: 7,
@@ -63,7 +63,7 @@ export const animeBooks = [
     author: 'Ёситоки Ойма',
     oldPrice: 1100,
     price: 880,
-    link: '/product/7'
+    link: '/books/7'
   },
   {
     id: 8,
@@ -72,7 +72,7 @@ export const animeBooks = [
     author: 'Хаяо Миядзаки',
     oldPrice: 1350,
     price: 1090,
-    link: '/product/8'
+    link: '/books/8'
   },
   {
     id: 9,
@@ -81,7 +81,7 @@ export const animeBooks = [
     author: 'Диана Уинн Джонс',
     oldPrice: 1250,
     price: 999,
-    link: '/product/9'
+    link: '/books/9'
   },
   {
     id: 10,
@@ -90,11 +90,10 @@ export const animeBooks = [
     author: 'Акиюки Носака',
     oldPrice: 950,
     price: 760,
-    link: '/product/10'
+    link: '/books/10'
   }
 ];
 
-// data.js
 export const studyBooks = [
   {
     id: 11,
@@ -103,7 +102,7 @@ export const studyBooks = [
     author: 'Алексей Васильев',
     oldPrice: 1200,
     price: 990,
-    link: '/product/11'
+    link: '/books/11'
   },
   {
     id: 12,
@@ -112,7 +111,7 @@ export const studyBooks = [
     author: 'Марк Лутц',
     oldPrice: 1500,
     price: 1290,
-    link: '/product/12'
+    link: '/books/12'
   },
   {
     id: 13,
@@ -121,7 +120,7 @@ export const studyBooks = [
     author: 'Алекс Бэнкс',
     oldPrice: 1800,
     price: 1490,
-    link: '/product/13'
+    link: '/books/13'
   },
   {
     id: 14,
@@ -130,7 +129,7 @@ export const studyBooks = [
     author: 'Алан Купер',
     oldPrice: 2100,
     price: 1790,
-    link: '/product/14'
+    link: '/books/14'
   },
   {
     id: 15,
@@ -139,6 +138,6 @@ export const studyBooks = [
     author: 'Роберт Седжвик',
     oldPrice: 2500,
     price: 1990,
-    link: '/product/15'
+    link: '/books/15'
   }
 ];
