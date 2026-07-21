@@ -71,11 +71,15 @@ export default function CartOrders({items, onUpdate}) {
         {items.map ((item) => (
           <div key = {item.id}className="cart-items">
               <div className="item-img">
-                <img src={item.image} alt ={item.title}/>
+                <Link to={`/books/${item.book_id}`}>
+                  <img src={item.image} alt ={item.title}/>
+                </Link>
               </div>
 
               <div className="item-description">
-                <div className="item-title">{item.title}</div>
+                <Link to={`/books/${item.book_id}`} className='item-title-link'>
+                  <div className="item-title">{item.title}</div>
+                </Link>
                 <div className="item-author">{item.author}</div>    
               </div>
 

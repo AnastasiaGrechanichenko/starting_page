@@ -5,6 +5,7 @@ import { cartApi } from '../../api/cartApi'
 import { favoriteApi } from '../../api/favoriteApi'
 import { useAuthStore } from '../../store/useAuthStore'
 import './BookPage.css'
+import { FaShoppingCart, FaCheck, FaHeart, FaRegHeart } from 'react-icons/fa'
 
 export default function BookPage() {
   const {id} = useParams()
@@ -16,8 +17,8 @@ export default function BookPage() {
   const[error,setError]=useState(null)
   const[cartLoading,setCartLoading]=useState(false)
   const[favLoading,setFavLoading]=useState(false)
-  const[cartSuccess,setCartSuccess]=useState(null)
-  const[favSuccess,setFavSuccess]=useState(null)
+  const[cartSuccess,setCartSuccess]=useState(false)
+  const[favSuccess,setFavSuccess]=useState(false)
 
   useEffect(()=>{
     let cancelled = false
@@ -29,8 +30,8 @@ export default function BookPage() {
     .catch(err=>{if (!cancelled)setError(err.message)})
     .finally (()=> {if (!cancelled)setLoading(false)})
 
-  return ()=>{cancelled=true}
-  },[id])
+    return ()=>{cancelled = true}
+    },[id])
 
   const handleAddToCart=async()=> {
     if(!isAuthenticated) {navigate('/login');return}
@@ -46,6 +47,7 @@ export default function BookPage() {
     } finally {
       setCartLoading(false)
     }
+  }
 
   
     const handleAddToFavorites=async()=> {
@@ -54,11 +56,11 @@ export default function BookPage() {
     setFavSuccess(false)
 
     try {
-      await favoriteApi.addToFavorite(book.id,1)
-      setCartSuccess(true)
+      await favoriteApi.addToFavorite(book.id)
+      setFavSuccess(true)
       setTimeout(()=> setFavSuccess(false),2000)
     }catch(err) {
-     if (err.message?.includes('Уже есть в избранном')) {
+     if (err.message?.includes('Уже есть')) {
       setFavSuccess(true)
      } else {
        alert(err.message||'Ошибка добавления в избранное')
@@ -76,7 +78,7 @@ export default function BookPage() {
     }
 
     if (error){
-      retur (
+      return (
         <div className='book-page'>
           <div className='book-error'>
             <h2>{error}</h2>
@@ -111,7 +113,40 @@ export default function BookPage() {
             <p className='book-author'>{book.author}</p>
           </div>
 
+          <span className='book-category'>{book.category}</span>
 
+          <div className='book-price-block'>
+            <span className='book-old-price'>{book.old_price} ₽</span>
+            <span className='book-price'>{book.price} ₽</span>
+          </div>
+
+          <div className='book-description'>
+            <h3>Описание</h3>
+            <p>{book.description}</p>
+          </div>
+
+          <div className='book-actions'> 
+            <button className={`add-cart-btn ${cartSuccess ? 'success' : ''}`}
+            onClick={handleAddToCart}
+            disabled={cartLoading}
+            >
+              {cartLoading ? 'Добавляем...': cartSuccess ?<FaCheck/> : <FaShoppingCart/>}
+            </button>
+            
+            <button className={`favorite-btn
+              ${favSuccess ? 'success': ''}`}
+              onClick={handleAddToFavorites}
+              disabled={favLoading}
+            >
+              {favLoading ? (
+                'Добавляем...' 
+              ) : favSuccess? (
+                <><FaHeart/>В избранном</>
+              ) : (
+                <><FaRegHeart/> В избранное</>   
+              )}  
+            </button>            
+          </div>
         </div>
       </div>
     </div>
