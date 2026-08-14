@@ -72,7 +72,7 @@ export default function CartOrders({items, onUpdate}) {
           <div key = {item.id}className="cart-items">
               <div className="item-img">
                 <Link to={`/books/${item.book_id}`}>
-                  <img src={item.image} alt ={item.title}/>
+                  <img src={item.image} alt ={item.title} className='cart-item-img'/>
                 </Link>
               </div>
 

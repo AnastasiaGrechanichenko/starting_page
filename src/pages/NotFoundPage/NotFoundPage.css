@@ -26,6 +26,7 @@
     font-weight: 700;
     justify-content: center;
     align-items: center;
+    margin-bottom: 20px;
 }
 .btn-return a {
     text-decoration: none;
