@@ -1,37 +1,23 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { orderApi } from '../../api/orderApi'
+import { useOrdersStore } from '../../store/useOrdersStore'
 import './OrdersPage.css'
 
 export default function OrdersPage() {
-  const [orders, setOrders]= useState([])
-  const [loading, setLoading]=useState(true)
-  const [error,setError]=useState(null)
+  const {orders,isLoading,error,loadOrders,cancelOrder}=useOrdersStore()
   const [expandedOrder,setExpandedOrder] = useState(null)
 
-  const loadOrders = async ()=> {
-    setLoading(true)
-    setError(null)
-    try {
-      const data = await orderApi.getOrders()
-      setOrders(data)
-    }catch(err) {
-      setError(err.message||'Ошибка загрузки заказов')
-    } finally {
-      setLoading(false)
-    }
-  }
+  
 
   useEffect(()=> {
     loadOrders()
-  },[])
+  },[loadOrders])
 
   const handleCancel = async(OrderId)=> {
     if(!window.confirm('Вы действительно хотите отменить заказ?')) return 
     try {
-      await orderApi.cancelOrder(OrderId)
-      await loadOrders()
+      await cancelOrder(OrderId)
     }catch(err){
       alert(err.message||'Ошибка отмены')
     }
@@ -62,7 +48,7 @@ export default function OrdersPage() {
   return statuses[status]||status
   }
 
-  if (loading){
+  if (isLoading){
     return (
             <div className='orders-page'>
               <div className='orders-loading'>
@@ -106,7 +92,7 @@ export default function OrdersPage() {
                 <span className='order-date'>{formatDate(order.created_at)}</span>
               </div>
               <div className='order-summary'>
-                <span className='order-status'>{getStatusText(order.status)}</span>
+                <span className={`order-status status-${order.status}`}>{getStatusText(order.status)}</span>
                 <span className='order-total'>{order.total_sum} ₽</span>
               </div>
             </div>
@@ -150,7 +136,7 @@ export default function OrdersPage() {
 
               {order.status==='pending' && (
                 <button 
-                  className='cancel-btn'
+                  className='order-cancel-btn'
                   onClick={()=> handleCancel(order.id)}
                 >
                   Отменить
