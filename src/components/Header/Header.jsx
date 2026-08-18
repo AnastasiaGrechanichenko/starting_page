@@ -117,15 +117,12 @@ export default function Header() {
             <div className='header-bottom'>
                 <nav >
                     <ul className='navigation-list'>
-                        <li><a href='#'>О нас </a></li>
-                        <li><a href='#'>Доставка и оплата</a></li>
-                        <li><a href='#'>Скидки</a></li>
-                        <li><a href='#'>Подарочные сертификаты</a></li>
-                        <li><a href='#'>Другое</a></li>
-                        <li><a href='#' className='social-link'>Мы в соцсетях</a></li>
-                        <li className='geolocation'><a href='#'>📍Москва </a></li>
+                        <li><a href='/about'>О нас </a></li>
+                        <li><a href='delivery'>Доставка и оплата</a></li>
+                        <li><a href='discounts'>Скидки</a></li>
+                        <li><a href='gifts'>Подарочные сертификаты</a></li>
+                        <li><a href='contatcts' className='social-link'>Контакты</a></li>
                         <li className='number'> +7 (999) 123-45-67</li>
-
                     </ul>
                 </nav>
             </div>

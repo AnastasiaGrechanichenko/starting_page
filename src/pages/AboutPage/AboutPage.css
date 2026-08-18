@@ -1,0 +1,35 @@
+.about-page {
+    max-width: 820px;
+    margin: 40px auto;
+    padding: 0 24px;
+    font-family: 'Georgia', serif;
+    color: #1e1e1e;
+    line-height: 1.7;
+    font-size: 18px;
+}
+
+.about-page h1 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 24px;
+    letter-spacing: -0.5px;
+    border-bottom: 2px solid #d4a373;
+    padding-bottom: 12px;
+}
+
+.about-page p {
+    margin-bottom: 20px;
+}
+
+.about-page .final-paragraph {
+    font-size: 20px;
+    font-style: italic;
+    color: #1a1a2e;
+    background: #faf8f5;
+    padding: 24px 28px;
+    border-radius: 12px;
+    border-left: 6px solid #d4a373;
+    margin-top: 32px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}

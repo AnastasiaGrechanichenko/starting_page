@@ -13,7 +13,11 @@ import RegisterPage from './pages/RegisterPage/RegisterPage';
 import LoginPage from './pages/LoginPage/LoginPage';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 import BookPage from './pages/BookPage/BookPage';
-
+import AboutPage from './pages/AboutPage/AboutPage';
+import DeliveryPage from './pages/DeliveryPage/DeliveryPage';
+import CertificatesPage from './pages/CertificatesPage/CertificatesPage'
+import ContactsPage from './pages/ContactsPage/Contactspage'
+import DiscountsPage from './pages/DiscountsPage/DiscountsPage'
 
 import { useEffect } from 'react';
 
@@ -39,6 +43,12 @@ function App() {
         <Route path='/books/:id' element = {<Layout><BookPage/></Layout>}/>
         <Route path='/login' element = {<Layout><LoginPage/></Layout>}/>
         <Route path='/register' element = {<Layout><RegisterPage/></Layout>}/>
+
+        <Route path='/about'element= {<Layout><AboutPage/></Layout>}/>
+        <Route path='/delivery'element= {<Layout><DeliveryPage/></Layout>}/>
+        <Route path='/discounts'element= {<Layout><DiscountsPage/></Layout>}/>
+        <Route path='/gifts'element= {<Layout><CertificatesPage/></Layout>}/>
+        <Route path='/contacts'element= {<Layout><ContactsPage/></Layout>}/>
 
         <Route path='/cart' element = {
           <ProtectedRoute>
