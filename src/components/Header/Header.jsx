@@ -1,18 +1,30 @@
 import React from 'react'
 import './Header.css'
 import {FaUser,FaBox,FaHeart,FaShoppingCart,FaSearch,FaSignOutAlt} from 'react-icons/fa'
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 import DropdownCatalog from '../DropdownCatalog/DropdownCatalog';
 import {useAuthStore} from '../../store/useAuthStore'
-
+import { useState } from 'react';
 
 export default function Header() {
     const isAuthenticated = useAuthStore((state)=> state.isAuthenticated);
     const user = useAuthStore((state) => state.user);
     const logout = useAuthStore((state) => state.logout);
 
+    const navigate = useNavigate();
+    const [searchQuery,setSearchQuery]=useState('');
     const handleLogout = () => {
         logout();
+    
+    };
+
+    const handleSearch =(e)=> {
+        e.preventDefault();
+        if(searchQuery.trim()) {
+            navigate(`/catalog?search=${encodeURIComponent(searchQuery.trim())}`);
+        }else {
+            navigate('/catalog');
+        }
     };
   return (
     <header className='header'> 
@@ -24,12 +36,16 @@ export default function Header() {
             </div>
             <div className='header-center'>
                 <DropdownCatalog/>
-                <div className='search'>
-                    <input type='text' placeholder='Введите название книги или автора...' className='search-input'/>
-                    <button className='search-btn'>
+                <form className='search' onSubmit={handleSearch}>
+                    <input type='text'
+                       placeholder='Введите название книги или автора...' className='search-input'
+                       value={searchQuery}
+                        onChange={(e)=>setSearchQuery(e.target.value)}
+                        />
+                    <button type='submit'className='search-btn'>
                         <FaSearch/>
                     </button>
-                </div>
+                </form>
 
             </div>
             <div className='header-right'>

@@ -20,7 +20,7 @@ export default function DropdownCatalog() {
                 <li><Link to = "/catalog?genre=detective">Детективы</Link></li>
                 <li><Link to = "/catalog?genre=educational">Учебная литература</Link></li>
                 <li><Link to = "/catalog?genre=manga">Манга</Link></li>
-                <li><Link to = "/catalog?genre=sci-fy">Фантастика</Link></li>
+                <li><Link to = "/catalog?genre=sci-fi">Фантастика</Link></li>
             </ul>
         )}
       

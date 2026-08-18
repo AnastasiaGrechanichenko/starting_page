@@ -7,6 +7,9 @@ const CATEGORIES = [
     {value:'novelty', label:'Новинки 2026'},
     {value:'anime', label:'Аниме и манга'},
     {value:'study', label:'Учебная литература'},  
+    { value: 'poetry', label: 'Поэзия' },
+    { value: 'detective', label: 'Детективы' },
+    { value: 'sci-fi', label: 'Фантастика' },
 ];
 
 

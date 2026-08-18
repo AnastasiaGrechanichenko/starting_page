@@ -156,3 +156,92 @@ export const studyBooks = [
     link: '/books/15'
   }
 ];
+
+export const poetryBooks = [
+  {
+    id: 16,
+    image: '/sonets.jpg',
+    title: 'Сонеты',
+    author: 'Уильям Шекспир',
+    oldPrice: 600,
+    price: 480,
+    link: '/books/16'
+  },
+  {
+    id: 17,
+    image: '/rilke.jpg',
+    title: 'Стихотворения',
+    author: 'Райнер Мария Рильке',
+    oldPrice: 500,
+    price: 400,
+    link: '/books/17'
+  },
+  {
+    id: 18,
+    image: '/onegin.jpg',
+    title: 'Евгений Онегин',
+    author: 'Александр Пушкин',
+    oldPrice: 500,
+    price: 400,
+    link: '/books/18'
+  }
+];
+
+export const detectiveBooks = [
+  {
+    id: 19,
+    image: '/kristi.jpg',
+    title: 'Убийство в Восточном экспрессе',
+    author: 'Агата Кристи',
+    oldPrice: 650,
+    price: 520,
+    link: '/books/19'
+  },
+  {
+    id: 20,
+    image: '/sherlock.jpg',
+    title: 'Шерлок Холмс. Этюд в багровых тонах',
+    author: 'Артур Конан Дойл',
+    oldPrice: 450,
+    price: 360,
+    link: '/books/20'
+  },
+  {
+    id: 21,
+    image: '/ten.jpg',
+    title: 'Десять негритят',
+    author: 'Агата Кристи',
+    oldPrice: 550,
+    price: 440,
+    link: '/books/21'
+  }]
+
+
+export const sciFiBooks = [
+{
+  id: 22,
+  image: '/vern.jpg',
+  title: 'Двадцать тысяч лье под водой',
+  author: 'Жюль Верн',
+  oldPrice: 750,
+  price: 600,
+  link: '/books/22'
+},
+{
+  id: 23,
+  image: '/gerbert.jpg',
+  title: 'Война миров',
+  author: 'Герберт Уэллс',
+  oldPrice: 650,
+  price: 520,
+  link: '/books/23'
+},
+{
+  id: 24,
+  image: '/mars.jpg',
+  title: 'Марсианские хроники',
+  author: 'Рэй Брэдбери',
+  oldPrice: 800,
+  price: 640,
+  link: '/books/24'
+}];
