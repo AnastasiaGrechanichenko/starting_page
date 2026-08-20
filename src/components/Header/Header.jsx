@@ -120,7 +120,6 @@ export default function Header() {
                         <li><a href='/about'>О нас </a></li>
                         <li><a href='delivery'>Доставка и оплата</a></li>
                         <li><a href='discounts'>Скидки</a></li>
-                        <li><a href='gifts'>Подарочные сертификаты</a></li>
                         <li><a href='contacts' className='social-link'>Контакты</a></li>
                         <li className='number'> +7 (999) 123-45-67</li>
                     </ul>

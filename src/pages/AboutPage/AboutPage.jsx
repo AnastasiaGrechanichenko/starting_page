@@ -1,6 +1,7 @@
 import React from 'react'
 import './AboutPage.css'
 
+
 export default function AboutPage() {
   return (
     <div className='about-page'>
@@ -13,6 +14,10 @@ export default function AboutPage() {
         <p>
             Мы гордимся,что за эти годы стали для многих местом, где можно приобрести редкие издания книг.
         </p>
+        
+        <strong> Мы располагаемся по адресу: г.Ростов-на-Дону, ул. Красноармейская, 5.</strong>
+
+
         <p className="final-paragraph">
         Пусть каждая книга, отправленная нами, станет для вас 
         путешествием, ответом на вопрос или просто тёплым вечером 
