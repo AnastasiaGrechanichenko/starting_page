@@ -245,3 +245,33 @@ export const sciFiBooks = [
   price: 640,
   link: '/books/24'
 }];
+
+export const bestsellerBooks = [
+  {
+    id: 25,
+    image: '/harry.jpg',
+    title: 'Гарри Поттер и философский камень',
+    author: 'Джоан Роулинг',
+    oldPrice: 900,
+    price: 720,
+    link: '/books/25'
+  },
+  {
+    id: 26,
+    image: '/lord.jpg',
+    title: 'Властелин колец: Братство Кольца',
+    author: 'Дж. Р. Р. Толкин',
+    oldPrice: 1200,
+    price: 960,
+    link: '/books/26'
+  },
+  {
+    id: 27,
+    image: '/little.jpg',
+    title: 'Маленький принц',
+    author: 'Антуан де Сент-Экзюпери',
+    oldPrice: 600,
+    price: 480,
+    link: '/books/27'
+  }
+];

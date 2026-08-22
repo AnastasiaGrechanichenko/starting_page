@@ -37,7 +37,6 @@ export default function Footer() {
             <h3 className='footer-column-title'>Карьера</h3>
             <ul className='footer-column-list'>
               <li><Link to='/vacancies'>Вакансии</Link></li>
-              <li><Link to='/vacancies'>Стажировки</Link></li>
               <li><Link to='/vacancies'>Отправить резюме</Link></li>
             </ul>
           </div>
@@ -45,9 +44,9 @@ export default function Footer() {
           <div className='footer-column'>
             <h3 className='footer-column-title'>Подборки</h3>
             <ul className='footer-column-list'>
-              <li><Link to ='/collections'>Подборки книг</Link></li>
-              <li><Link to='/novelties'>Новинки</Link></li>
-              <li><Link to='/bestsellers'>Бестселлеры</Link></li>
+              <li><Link to ='/catalog'>Каталог</Link></li>
+              <li><Link to='/catalog?category=novelty'>Новинки</Link></li>
+              <li><Link to='/catalog?category=bestseller'>Бестселлеры</Link></li>
             </ul>
           </div>
         </div>

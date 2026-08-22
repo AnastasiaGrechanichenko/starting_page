@@ -1,0 +1,48 @@
+.vacancies-page {
+    max-width: 820px;
+    margin: 40px auto;
+    padding: 0 24px;
+    font-family: 'Georgia', serif;
+    color: #1a1a2e;
+    line-height: 1.8;
+    font-size: 18px;
+}
+
+.vacancies-page h1 {
+    font-size: 32px;
+    font-weight: 700;
+    border-bottom: 2px solid #333;
+    padding-bottom: 12px;
+    margin-bottom: 28px;
+    text-align: center;
+}
+
+.vacancies-page section {
+    margin-bottom: 32px;
+}
+
+.vacancies-page h2 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #1a1a2e;
+}
+
+.vacancies-page ul {
+    list-style: disc;
+    padding-left: 28px;
+    margin: 8px 0 0 0;
+}
+
+.vacancies-page li {
+    margin-bottom: 6px;
+}
+
+.vacancies-page a {
+    color: #1a1a2e;
+    text-decoration: underline;
+}
+
+.vacancies-page strong {
+    font-weight: 600;
+}

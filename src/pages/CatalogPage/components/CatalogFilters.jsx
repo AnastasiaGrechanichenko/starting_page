@@ -5,16 +5,17 @@ import './CatalogFilters.css'
 const CATEGORIES = [
     {value:'all', label:'Все категории'},
     {value:'novelty', label:'Новинки 2026'},
-    {value:'anime', label:'Аниме и манга'},
-    {value:'study', label:'Учебная литература'},  
+    {value:'manga', label:'Аниме и манга'},
+    {value:'educational', label:'Учебная литература'},  
     { value: 'poetry', label: 'Поэзия' },
     { value: 'detective', label: 'Детективы' },
     { value: 'sci-fi', label: 'Фантастика' },
+    { value: 'bestseller', label: 'Бестселлеры' }
 ];
 
 
-export default function CatalogFilters({onFilterChange, initialSearch = ''}) {
-    const [category,setCategory] = useState('all')
+export default function CatalogFilters({onFilterChange, initialSearch = '',initialCategory='all'}) {
+    const [category,setCategory] = useState('initialCategory')
     const [minPrice,setMinPrice] = useState('')
     const [maxPrice,setMaxPrice] = useState('')
     const [search, setSearch] = useState(initialSearch)
@@ -26,6 +27,10 @@ export default function CatalogFilters({onFilterChange, initialSearch = ''}) {
     useEffect(()=> {
         onFilterChange({category,minPrice,maxPrice,search});
     }, [category,minPrice,maxPrice,search,onFilterChange]);
+
+    useEffect(()=> {
+        setCategory(initialCategory)
+    },[initialCategory]);
 
     const handleCategoryChange = (value) => {
         setCategory(value);

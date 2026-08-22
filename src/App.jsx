@@ -21,6 +21,7 @@ import PrivacyPage from './pages/PrivacyPage/PrivacyPage';
 import TermsPage from './pages/TermsPage/TermsPage'
 
 import { useEffect } from 'react';
+import VacanciesPage from './pages/VacanciesPage/VacanciesPage';
 
 
 function ProtectedRoute ({children}) {
@@ -51,6 +52,7 @@ function App() {
         <Route path='/contacts'element= {<Layout><ContactsPage/></Layout>}/>
         <Route path='/privacy' element={<Layout><PrivacyPage/></Layout>} />
         <Route path='/terms' element={<Layout><TermsPage/></Layout>} />
+        <Route path='/vacancies' element={<Layout><VacanciesPage/></Layout>}/>
 
         <Route path='/cart' element = {
           <ProtectedRoute>
