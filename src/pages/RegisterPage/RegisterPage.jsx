@@ -10,6 +10,7 @@ export default function RegisterPage() {
   const[name,setName]=useState('')
   const[age,setAge]=useState('')
   const[email,setEmail]=useState('')
+  const[phone,setPhone]=useState('')
 
   const {register,isLoading,error,clearError} = useAuthStore();
   const navigate = useNavigate();
@@ -25,11 +26,29 @@ export default function RegisterPage() {
         name,
         age:Number(age),
         email:email.trim()||null,
+        contact_number: phone.trim() || null,
       });
       navigate('/');
     } catch {
     }
+  }
+
+    const handlePhoneChange = (e) => {
+      let value = e.target.value.replace(/\D/g, '');
+
+      if (value.startsWith('7') || value.startsWith('8')) {
+        value = value.slice(1);
+      }
+
+      let formatted = '+7';
+      if (value.length > 0) formatted += ' (' + value.slice(0, 3);
+      if (value.length >= 3) formatted += ') ' + value.slice(3, 6);
+      if (value.length >= 6) formatted += '-' + value.slice(6, 8);
+      if (value.length >= 8) formatted += '-' + value.slice(8, 10);
+
+      setPhone(formatted);
   };
+
 
   return (
     <div className='register-wrapper'>
@@ -88,6 +107,17 @@ export default function RegisterPage() {
               onChange={(e)=>setEmail(e.target.value)}
               disabled={isLoading}
               placeholder='example@mail.ru'
+            />
+          </div>
+
+          <div  className='form-group'>
+            <label>Номер телефона(необязательно)</label>
+            <input
+            type='tel'
+            value={phone}
+            onChange={handlePhoneChange}
+            disabled={isLoading}
+            placeholder='+7 (999) 999-99-99'
             />
           </div>
 

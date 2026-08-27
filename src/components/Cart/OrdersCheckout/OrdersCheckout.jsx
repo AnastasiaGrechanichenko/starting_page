@@ -1,9 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './OrdersCheckout.css';
-import { orderApi} from '../../../api/orderApi'
 
-export default function OrdersCheckout({items, onOrder}) {
+export default function OrdersCheckout({items}) {
   const navigate = useNavigate();
 
   const totalItems=items.reduce((sum,item)=> sum + item.quantity, 0);
@@ -12,14 +11,7 @@ export default function OrdersCheckout({items, onOrder}) {
 
   const handleCheckout = async()=> {
     if(!items.length) return;
-    try {
-      await orderApi.createOrder();
-      alert('Заказ оформлен!')
-      onOrder();
-      navigate('/orders')
-    }catch(err){
-      alert(err.message||'Ошибка при оформлении заказа')
-    }
+    navigate('/checkout')
   };
  
   return (

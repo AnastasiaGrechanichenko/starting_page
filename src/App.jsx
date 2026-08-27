@@ -19,9 +19,11 @@ import ContactsPage from './pages/ContactsPage/Contactspage'
 import DiscountsPage from './pages/DiscountsPage/DiscountsPage'
 import PrivacyPage from './pages/PrivacyPage/PrivacyPage';
 import TermsPage from './pages/TermsPage/TermsPage'
+import OrderSuccessPage from './pages/OrderSuccessPage/OrderSuccessPage';
 
 import { useEffect } from 'react';
 import VacanciesPage from './pages/VacanciesPage/VacanciesPage';
+import CheckoutPage from './pages/CheckoutPage/CheckoutPage';
 
 
 function ProtectedRoute ({children}) {
@@ -78,6 +80,18 @@ function App() {
             <Layout><ProfilePage/></Layout>
           </ProtectedRoute>
         }/>
+      
+      <Route path="/checkout" element={
+        <ProtectedRoute>
+            <Layout><CheckoutPage /></Layout>
+        </ProtectedRoute>
+      } />
+      
+      <Route path='/order-success/:id' element={
+        <ProtectedRoute>
+          <Layout><OrderSuccessPage/></Layout>
+        </ProtectedRoute>
+      }/>
       
       <Route path='*' element =  {
         <Layout><NotFoundPage/></Layout> 
