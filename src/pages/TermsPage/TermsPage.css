@@ -1,52 +1,102 @@
 .terms-page {
-    max-width: 820px;
-    margin: 40px auto;
-    padding: 0 24px;
-    font-family: 'Georgia', serif;
-    color: #1a1a2e;
-    line-height: 1.8;
-    font-size: 18px;
+  max-width: 820px;
+  margin: 40px auto;
+  padding: 0 24px;
+  font-family: 'Georgia', serif;
+  color: #1a1a2e;
+  line-height: 1.8;
+  font-size: 18px;
 }
 
 .terms-page h1 {
-    font-size: 32px;
-    font-weight: 700;
-    border-bottom: 2px solid #333;
-    padding-bottom: 12px;
-    margin-bottom: 28px;
-    text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  border-bottom: 2px solid #333;
+  padding-bottom: 12px;
+  margin-bottom: 28px;
+  text-align: center;
 }
 
 .terms-page section {
-    margin-bottom: 32px;
+  margin-bottom: 32px;
 }
 
 .terms-page h2 {
-    font-size: 22px;
-    font-weight: 600;
-    margin-bottom: 12px;
-    color: #1a1a2e;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #1a1a2e;
 }
 
 .terms-page p {
-    margin: 0 0 12px 0;
+  margin: 0 0 12px 0;
 }
 
 .terms-page ul {
-    list-style: disc;
-    padding-left: 28px;
-    margin: 8px 0 0 0;
+  list-style: disc;
+  padding-left: 28px;
+  margin: 8px 0 0 0;
 }
 
 .terms-page li {
-    margin-bottom: 6px;
+  margin-bottom: 6px;
 }
 
 .terms-page a {
-    color: #1a1a2e;
-    text-decoration: underline;
+  color: #1a1a2e;
+  text-decoration: underline;
 }
 
 .terms-page strong {
-    font-weight: 600;
+  font-weight: 600;
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .terms-page {
+    padding: 0 20px;
+    font-size: 17px;
+  }
+  .terms-page h1 {
+    font-size: 28px;
+  }
+  .terms-page h2 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .terms-page {
+    margin: 20px auto;
+    padding: 0 16px;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  .terms-page h1 {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+  .terms-page h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  .terms-page ul {
+    padding-left: 20px;
+  }
+  .terms-page li {
+    margin-bottom: 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  .terms-page {
+    margin: 12px auto;
+    padding: 0 12px;
+    font-size: 14px;
+  }
+  .terms-page h1 {
+    font-size: 18px;
+  }
+  .terms-page h2 {
+    font-size: 16px;
+  }
 }

@@ -1,60 +1,109 @@
 .discounts-page {
-    max-width: 820px;
-    margin: 40px auto;
-    padding: 0 24px;
-    font-family: 'Georgia', serif;
-    color: #1e1e1e;
-    line-height: 1.8;
-    font-size: 18px;
+  max-width: 820px;
+  margin: 40px auto;
+  padding: 0 24px;
+  font-family: 'Georgia', serif;
+  color: #1e1e1e;
+  line-height: 1.8;
+  font-size: 18px;
 }
 
 .discounts-page h1 {
-    font-size: 36px;
-    color: #1a1a2e;
-    border-bottom: 2px solid #d4a373;
-    padding-bottom: 12px;
-    margin-bottom: 28px;
+  font-size: 36px;
+  color: #1a1a2e;
+  border-bottom: 2px solid #d4a373;
+  padding-bottom: 12px;
+  margin-bottom: 28px;
 }
 
 .discounts-page section {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 32px;
 }
 
 .discounts-page h2 {
-    display: flex;
-    align-items: center;
-    font-size: 26px;
-    color: #2c3e2f;
-    margin: 0;
+  display: flex;
+  align-items: center;
+  font-size: 26px;
+  color: #2c3e2f;
+  margin: 0;
 }
 
 .discounts-page .discount-icon {
-    margin-right: 12px;
+  margin-right: 12px;
 }
 
 .discounts-page ul {
-    list-style: disc;
-    padding-left: 28px;
-    margin: 4px 0 0 0;
+  list-style: disc;
+  padding-left: 28px;
+  margin: 4px 0 0 0;
 }
 
 .discounts-page li {
-    margin-bottom: 6px;
+  margin-bottom: 6px;
 }
 
 .discounts-page strong {
-    color: #1a1a2e;
+  color: #1a1a2e;
 }
 
 .discounts-page p {
-    margin: 0;
+  margin: 0;
 }
-.coins {
-    fill: gold;
+
+.coins { fill: gold; }
+.rocket { fill: red; }
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .discounts-page {
+    padding: 0 20px;
+    font-size: 17px;
+  }
+  .discounts-page h1 {
+    font-size: 30px;
+  }
+  .discounts-page h2 {
+    font-size: 22px;
+  }
 }
-.rocket{
-    fill: red;
+
+@media (max-width: 768px) {
+  .discounts-page {
+    margin: 20px auto;
+    padding: 0 16px;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  .discounts-page h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  .discounts-page h2 {
+    font-size: 19px;
+    margin-top: 24px;
+  }
+  .discounts-page .discount-icon {
+    font-size: 1em;
+    margin-right: 8px;
+  }
+  .discounts-page ul {
+    padding-left: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .discounts-page {
+    margin: 12px auto;
+    padding: 0 12px;
+    font-size: 14px;
+  }
+  .discounts-page h1 {
+    font-size: 20px;
+  }
+  .discounts-page h2 {
+    font-size: 17px;
+    margin-top: 20px;
+  }
 }

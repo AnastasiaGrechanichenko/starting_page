@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './OrdersCheckout.css';
 
-export default function OrdersCheckout({items}) {
+export default function OrdersCheckout({items,className}) {
   const navigate = useNavigate();
 
   const totalItems=items.reduce((sum,item)=> sum + item.quantity, 0);
@@ -15,7 +15,7 @@ export default function OrdersCheckout({items}) {
   };
  
   return (
-    <div className="orders-checkout">
+    <div className={`orders-checkout ${className || ''}`}>
       <h3 className="checkout-title">Ваш заказ</h3>
       <div className="quantity-price">
         <span>Товаров:</span>

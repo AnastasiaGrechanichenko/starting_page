@@ -5,92 +5,196 @@
   width: 100%;
   min-height: 400px;
   border-radius: 12px;
-  padding: 20px;        
-  margin: 20px auto;      
-  max-width: 1200px;      
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 1200px;
   box-sizing: border-box;
   gap: 20px;
 }
 
-
 .cart-header {
   display: flex;
   flex-direction: row;
-  padding-top: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 10px 10px 0 10px;
 }
+
 .cart-header-name {
   font-size: 28px;
-  flex: 1;
   font-weight: bold;
+  margin: 0;
+  text-align: left;
 }
+
 .cart-remove-btn {
-  display: flex;
   background-color: rgba(248, 228, 11, 0.952);
-  padding-top: 5px;
+  padding: 8px 16px;
   border-radius: 8px;
-  width: 130px;
   border: none;
-  justify-content: center;
   font-weight: bolder;
-  font-size: 12px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+.cart-remove-btn:hover {
+  background-color: rgba(230, 210, 10, 0.952);
 }
 
 .wrapper-orders {
   display: flex;
-  flex: wrap;
+  flex-direction: row;
+  flex-wrap: wrap;
   gap: 30px;
 }
-.cart-items {
-  display: flex;
-  flex: 4;
-  min-width: 260px;
-}
-.orders-checkout {
-  flex: 1;
-  min-width: 260px;
-  border: 1px black solid;
-  border-radius: 12px;
-  background-color: white;
-}
-.item-img {
-  flex-grow: 1;
-  border: 1px solid black;
-  height: 250px;
-}
-.item-description {
-  flex-grow: 2;
-  border: 1px solid black;
-  height: 250px;
-}
-.quantity {
-  flex: 1;
-  border: 1px solid black;
-  height: 250px;
+
+.cart-left {
+  flex: 3;
+  min-width: 280px;
 }
 
-.cart-items {
-  background-color: white;
-  border-radius: 20px;
-  gap: 10px;
-  border: 1 px solid black;
-}
-.cart-left {
-  display: flex;
-  gap: 20px;
-  flex: 3;
-}
 .cart-right {
-  display: flex;
   flex: 1;
+  min-width: 220px;
 }
+
+
 .empty-cart {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   flex: 1;
+  padding: 40px 20px;
+  text-align: center;
+  width: 100%;
+}
+.empty-cart img {
+  width: 150px;
+  height: 150px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  object-fit: cover;
+}
+.empty-cart h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 8px;
+}
+.empty-cart .go-cart {
+  font-size: 16px;
+  color: #666;
+}
+.empty-cart .to-cat {
+  color: #4a90d9;
+  text-decoration: underline;
+  margin-left: 4px;
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .cart-wrapper {
+    padding: 16px;
+    margin: 16px auto;
+  }
+  .cart-header-name {
+    font-size: 24px;
+  }
+  .wrapper-orders {
+    gap: 20px;
+    
+  }
+  .cart-left {
+    flex: 2;
+  }
+  .cart-right {
+    flex: 1;
+  }
 }
 
 
+@media (max-width: 768px) {
+  .cart-wrapper {
+    padding: 12px;
+    margin: 12px auto;
+    gap: 16px;
+    border-radius: 8px;
+    min-height: auto;
+  }
+
+  .cart-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 4px;
+    gap: 8px;
+  }
+
+  .cart-header-name {
+    font-size: 20px;
+    text-align: left;
+    flex: 1;
+  }
+
+  .cart-remove-btn {
+    width: auto;
+    max-width: 130px;
+    padding: 6px 12px;
+    font-size: 12px;
+    flex-shrink: 0;
+  }
+
+  .wrapper-orders {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .cart-left,
+  .cart-right {
+    flex: 1;
+    width: 100%;
+    min-width: unset;
+  }
+
+  .empty-cart {
+    padding: 20px 12px;
+  }
+  .empty-cart img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 16px;
+  }
+  .empty-cart h2 {
+    font-size: 20px;
+  }
+  .empty-cart .go-cart {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cart-wrapper {
+    padding: 8px;
+    margin: 8px auto;
+  }
+  .cart-header-name {
+    font-size: 17px;
+  }
+  .cart-remove-btn {
+    max-width: 110px;
+    font-size: 11px;
+    padding: 5px 10px;
+  }
+  .empty-cart img {
+    width: 80px;
+    height: 80px;
+  }
+  .empty-cart h2 {
+    font-size: 17px;
+  }
+  .empty-cart .go-cart {
+    font-size: 13px;
+  }
+}

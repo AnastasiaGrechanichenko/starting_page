@@ -6,6 +6,7 @@
   position: sticky;
   top: 24px;
 }
+
 .filters-title {
   font-size: 20px;
   font-weight: 700;
@@ -15,9 +16,11 @@
   border-bottom: 2px solid #f0f0f0;
   color: #1a1a2e;
 }
+
 .filters-block {
   margin-bottom: 24px;
 }
+
 .filters-block label {
   display: block;
   font-weight: 600;
@@ -25,6 +28,7 @@
   color: #333;
   margin-bottom: 8px;
 }
+
 .filter-input {
   width: 100%;
   padding: 10px 14px;
@@ -39,11 +43,13 @@
   border-color: #1a1a2e;
   background: #ffffff;
 }
+
 .category-list {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
+
 .category-option {
   display: flex;
   align-items: center;
@@ -60,11 +66,13 @@
   flex-shrink: 0;
   cursor: pointer;
 }
+
 .price-inputs {
   display: flex;
   align-items: center;
   gap: 10px;
 }
+
 .price-input {
   flex: 1;
   padding: 10px 12px;
@@ -80,10 +88,12 @@
   border-color: #1a1a2e;
   background: #ffffff;
 }
+
 .price-separator {
   color: #999;
   font-weight: 300;
 }
+
 .reset-filters-btn {
   width: 100%;
   padding: 12px;
@@ -102,4 +112,97 @@
 }
 .reset-filters-btn:active {
   background: #d0d0da;
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .catalog-filters {
+    padding: 18px;
+    top: 16px;
+  }
+  .filters-title {
+    font-size: 18px;
+  }
+  .category-option {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 768px) {
+  .catalog-filters {
+    padding: 16px;
+    position: static;
+    border: 1px solid #eee;
+    margin-bottom: 8px;
+  }
+
+  .filters-title {
+    font-size: 17px;
+    margin-bottom: 14px;
+  }
+
+  .filters-block {
+    margin-bottom: 16px;
+  }
+
+  .filters-block label {
+    font-size: 13px;
+  }
+
+  .category-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 6px 12px;
+  }
+
+  .category-option {
+    font-size: 13px;
+    gap: 6px;
+    flex: 0 0 calc(50% - 6px);
+  }
+
+  .price-inputs {
+    gap: 6px;
+  }
+
+  .price-input {
+    padding: 8px 10px;
+    font-size: 13px;
+    width: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .catalog-filters {
+    padding: 12px;
+  }
+
+  .filters-title {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+
+  .filters-block {
+    margin-bottom: 12px;
+  }
+
+  .category-option {
+    font-size: 12px;
+    flex: 0 0 100%;
+  }
+
+  .filter-input {
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+
+  .price-input {
+    padding: 6px 8px;
+    font-size: 12px;
+    width: 50px;
+  }
+
+  .reset-filters-btn {
+    padding: 10px;
+    font-size: 13px;
+  }
 }

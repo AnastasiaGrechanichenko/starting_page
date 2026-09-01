@@ -1,146 +1,290 @@
 .profile-wrapper {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
-  background: #f0f2f5;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
 }
 
 .profile-card {
-  background: #ffffff;
-  border-radius: 10px;
-  border: 2px solid palegreen;
-  padding: 2rem 2.5rem;
-  width: 100%;
-  max-width: 460px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  background: #fff;
+  border-radius: 16px;
+  padding: 30px 24px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
 }
 
 .profile-card h1 {
-  margin: 0 0 1.5rem 0;
-  font-size: 2.6rem;
+  font-size: 28px;
+  font-weight: 700;
   color: #1a1a2e;
-  font-weight: 600;
-  align-items: center;
+  margin: 0 0 24px 0;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #f0ece6;
 }
 
 .profile-info {
   display: flex;
   flex-direction: column;
-  gap: 0.9rem;
+  gap: 4px;
 }
 
 .info-row {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  min-height: 36px;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid #f5f3ef;
+}
+.info-row:last-of-type {
+  border-bottom: none;
 }
 
 .info-label {
   font-weight: 600;
-  color: #666;
-  min-width: 70px;
-  font-size: 1.5rem;
+  color: #333;
+  min-width: 100px;
+  flex-shrink: 0;
+  font-size: 16px;
 }
 
 .info-value {
   color: #1a1a2e;
-  font-size: 1.3rem;
+  font-size: 16px;
+  word-break: break-word;
 }
 
-.email-row {
-  align-items: flex-start;
+.edit-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+  width: 100%;
+}
+.edit-field input {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  background: #fafafa;
+  transition: border-color 0.2s, background 0.2s;
+  width: 100%;
+  box-sizing: border-box;
+}
+.edit-field input:focus {
+  outline: none;
+  border-color: #1a1a2e;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(26, 26, 46, 0.08);
+}
+.edit-field input:disabled {
+  background: #f5f5f5;
+  opacity: 0.6;
 }
 
-.email-display {
+.edit-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.edit-actions button {
+  padding: 6px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, opacity 0.2s;
+}
+.save-btn {
+  background: #1a1a2e;
+  color: #fff;
+}
+.save-btn:hover:not(:disabled) {
+  background: #2d2d44;
+}
+.cancel-btn {
+  background: #f0f0f0;
+  color: #333;
+}
+.cancel-btn:hover:not(:disabled) {
+  background: #e0e0e0;
+}
+.edit-actions button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.display-field {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 12px;
+  flex: 1;
   flex-wrap: wrap;
 }
 
-.email-edit {
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-  flex: 1;
-  min-width: 220px;
-}
-
-.email-edit input {
-  padding: 0.55rem 0.85rem;
-  border: 1.5px solid #ddd;
-  border-radius: 10px;
-  font-size: 1.3rem;
-  outline: none;
-  transition: border-color 0.2s, box-shadow 0.2s;
-  font-family: inherit;
-}
-
-.email-edit input:focus {
-  border-color: #4a90d9;
-  box-shadow: 0 0 0 3px rgba(74, 144, 217, 0.15);
-}
-
-.email-edit input:disabled {
-  background: #f5f5f5;
-  cursor: not-allowed;
-}
-
-.email-actions {
-  display: flex;
-  gap: 0.6rem;
-}
-
-.edit-btn,
-.save-btn,
-.cancel-btn {
-  padding: 0.4rem 1rem;
-  border-radius: 8px;
-  border: none;
-  font-size: 1.4rem;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  font-weight: 500;
-}
-
 .edit-btn {
-  background: #eef2f7;
-  color: #4a90d9;
+  background: none;
+  border: none;
+  color: #e57e65;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 2px 4px;
+  transition: color 0.2s;
 }
-
 .edit-btn:hover {
-  background: #dce6f0;
-}
-
-.save-btn {
-  background: #4a90d9;
-  color: #fff;
-}
-
-.save-btn:hover:not(:disabled) {
-  background: #357abd;
-}
-
-.save-btn:disabled,
-.cancel-btn:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-.cancel-btn {
-  background: #f0f0f0;
-  color: #666;
-}
-
-.cancel-btn:hover:not(:disabled) {
-  background: #e0e0e0;
+  color: #aa2426;
 }
 
 .error-text {
   color: #e74c3c;
-  font-size: 0.82rem;
-  margin-top: 0.2rem;
+  font-size: 14px;
+  margin-top: 4px;
+  display: block;
+}
+
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .profile-wrapper {
+    margin: 30px auto;
+    padding: 0 16px;
+  }
+  .profile-card {
+    padding: 24px 20px;
+  }
+  .profile-card h1 {
+    font-size: 24px;
+  }
+  .info-label {
+    min-width: 80px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-wrapper {
+    margin: 20px auto;
+    padding: 0 12px;
+  }
+
+  .profile-card {
+    padding: 16px 12px;
+    border-radius: 12px;
+  }
+  .profile-card h1 {
+    font-size: 20px;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+  }
+
+  .info-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+    padding: 10px 0;
+  }
+  .info-label {
+    min-width: unset;
+    font-size: 14px;
+  }
+  .info-value {
+    font-size: 15px;
+  }
+
+  .edit-field input {
+    font-size: 15px;
+    padding: 10px 12px;
+  }
+
+  .edit-actions {
+    flex-direction: row;
+    gap: 6px;
+  }
+  .edit-actions button {
+    flex: 1;
+    padding: 8px 12px;
+    text-align: center;
+  }
+
+  .display-field {
+    flex-wrap: wrap;
+  }
+
+  .edit-btn {
+    font-size: 13px;
+  }
+
+  .error-text {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-wrapper {
+    margin: 12px auto;
+    padding: 0 8px;
+  }
+
+  .profile-card {
+    padding: 12px 8px;
+  }
+  .profile-card h1 {
+    font-size: 17px;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+  }
+
+  .info-row {
+    padding: 8px 0;
+  }
+  .info-label {
+    font-size: 13px;
+  }
+  .info-value {
+    font-size: 14px;
+  }
+
+  .edit-field input {
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+
+  .edit-actions {
+    flex-direction: column;
+    gap: 4px;
+  }
+  .edit-actions button {
+    width: 100%;
+    padding: 8px;
+    font-size: 13px;
+  }
+
+  .edit-btn {
+    font-size: 12px;
+  }
+
+  .error-text {
+    font-size: 12px;
+  }
+}
+
+.profile-logout-btn {
+  width: 100%;
+  padding: 14px;
+  margin-top: 24px;
+  background: #fef2f2;
+  color: #dc2626;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.profile-logout-btn:hover {
+  background: #fee2e2;
+  transform: scale(1.01);
 }

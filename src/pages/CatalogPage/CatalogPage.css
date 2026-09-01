@@ -7,9 +7,43 @@
 }
 
 .catalog-sidebar {
-  flex: 0 0 280px;   
+  flex: 0 0 280px;
 }
 
 .catalog-content {
-  flex: 1;           
+  flex: 1;
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .catalog-page {
+    gap: 20px;
+    padding: 16px;
+  }
+  .catalog-sidebar {
+    flex: 0 0 240px;
+  }
+}
+
+@media (max-width: 768px) {
+  .catalog-page {
+    flex-direction: column;
+    gap: 16px;
+    padding: 12px;
+  }
+
+  .catalog-sidebar {
+    flex: 1;
+    width: 100%;
+  }
+
+  .catalog-content {
+    flex: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .catalog-page {
+    padding: 8px;
+    gap: 12px;
+  }
 }

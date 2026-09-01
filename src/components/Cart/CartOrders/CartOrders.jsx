@@ -6,7 +6,7 @@ import { cartApi } from '../../../api/cartApi';
 
 
 
-export default function CartOrders({items, onUpdate}) {
+export default function CartOrders({items, onUpdate,className}) {
 
     const handleIncrement = async (item) => {
       try { 
@@ -67,7 +67,7 @@ export default function CartOrders({items, onUpdate}) {
   }
 
     return (
-      <div className='cart-orders-list'>
+      <div className={`cart-orders-list ${className || ''}`}>
         {items.map ((item) => (
           <div key = {item.id}className="cart-items">
               <div className="item-img">

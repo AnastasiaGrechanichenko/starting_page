@@ -107,9 +107,9 @@ export default function Header() {
             </div>
 
         <div className='mob-nav-links'>
-            <a href="/stores">Наши магазины</a>
-            <a href="/discounts">Скидки</a>
-            <a href="/delivery">Доставка</a>
+            <Link to="/about">О нас</Link>
+            <Link to="/discounts">Скидки</Link>
+            <Link to="/delivery">Доставка</Link>
         </div>
 
 

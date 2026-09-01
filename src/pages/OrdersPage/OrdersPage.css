@@ -9,6 +9,7 @@
 .orders-page h1 {
   margin-bottom: 1.5rem;
   font-size: 1.8rem;
+  color: #1a1a2e;
 }
 
 .orders-loading,
@@ -21,11 +22,9 @@
   padding: 4rem 2rem;
   gap: 1rem;
 }
-
 .orders-error h2 {
   color: #e74c3c;
 }
-
 .orders-error button {
   padding: 0.6rem 1.2rem;
   background: #4a90d9;
@@ -35,13 +34,11 @@
   cursor: pointer;
   font-size: 0.95rem;
 }
-
 .to-catalog {
   color: #4a90d9;
   text-decoration: none;
   font-size: 1.1rem;
 }
-
 .to-catalog:hover {
   text-decoration: underline;
 }
@@ -67,7 +64,6 @@
   cursor: pointer;
   transition: background 0.2s;
 }
-
 .order-header:hover {
   background: #f8f9fa;
 }
@@ -77,13 +73,11 @@
   flex-direction: column;
   gap: 0.3rem;
 }
-
 .order-number {
   font-weight: 700;
   font-size: 1.1rem;
   color: #1a1a2e;
 }
-
 .order-date {
   color: #666;
   font-size: 0.85rem;
@@ -95,29 +89,24 @@
   align-items: flex-end;
   gap: 0.3rem;
 }
-
 .order-status {
   padding: 0.25rem 0.6rem;
   border-radius: 6px;
   font-size: 0.85rem;
   font-weight: 500;
 }
-
 .status-pending {
   background: #fff3cd;
   color: #856404;
 }
-
 .status-cancelled {
   background: #f8d7da;
   color: #721c24;
 }
-
 .status-shipped {
   background: #cce5ff;
   color: #004085;
 }
-
 .status-delivered {
   background: #d4edda;
   color: #155724;
@@ -153,49 +142,40 @@
   background: #f8f9fa;
   border-radius: 8px;
 }
-
 .item-link {
   text-decoration: none;
   color: inherit;
 }
-
 .item-link:hover .item-title {
   color: #4a90d9;
 }
-
 .item-title {
   font-weight: 600;
   color: #1a1a2e;
   transition: color 0.2s;
 }
-
 .item-author {
   color: #666;
   font-size: 0.9rem;
 }
-
 .item-prices {
   display: flex;
   align-items: center;
   gap: 0.5rem;
   margin-left: auto;
 }
-
 .item-old-price {
   text-decoration: line-through;
   color: #999;
   font-size: 0.9rem;
 }
-
 .item-price {
   font-weight: 700;
   color: #e74c3c;
 }
-
 .item-quantity {
   color: #666;
 }
-
 .item-discount {
   font-size: 0.85rem;
   color: #27ae60;
@@ -208,17 +188,14 @@
   padding-top: 1rem;
   border-top: 1px solid #eee;
 }
-
 .total-row {
   display: flex;
   justify-content: space-between;
   font-size: 0.95rem;
 }
-
 .total-row.discount {
   color: #27ae60;
 }
-
 .total-row.final {
   font-size: 1.2rem;
   font-weight: 700;
@@ -239,29 +216,141 @@
   font-weight: 600;
   transition: background 0.2s;
 }
-
 .order-cancel-btn:hover {
   background: #c0392b;
 }
 
-@media (max-width: 640px) {
+@media (min-width: 769px) and (max-width: 1024px) {
+  .orders-page {
+    padding: 1.5rem;
+  }
+  .orders-page h1 {
+    font-size: 1.6rem;
+  }
+  .order-header {
+    padding: 1rem 1.2rem;
+  }
+  .order-details {
+    padding: 0 1.2rem 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .orders-page {
+    padding: 1rem;
+  }
+  .orders-page h1 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+
   .order-header {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5rem;
+    padding: 1rem;
+  }
+  .order-summary {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
   }
 
-  .order-summary {
-    align-items: flex-start;
+  .order-number {
+    font-size: 1rem;
+  }
+  .order-total {
+    font-size: 1.1rem;
+  }
+
+  .order-details {
+    padding: 0 1rem 1rem;
   }
 
   .order-item {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.25rem;
+    padding: 0.6rem;
   }
-
   .item-prices {
     margin-left: 0;
+    gap: 0.3rem;
+    flex-wrap: wrap;
+  }
+  .item-title {
+    font-size: 0.95rem;
+  }
+  .item-author {
+    font-size: 0.85rem;
+  }
+
+  .order-cancel-btn {
+    width: 100%;
+    text-align: center;
+    padding: 0.8rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .orders-page {
+    padding: 0.75rem;
+  }
+  .orders-page h1 {
+    font-size: 1.2rem;
+  }
+
+  .order-header {
+    padding: 0.75rem;
+  }
+  .order-number {
+    font-size: 0.9rem;
+  }
+  .order-date {
+    font-size: 0.75rem;
+  }
+  .order-status {
+    font-size: 0.75rem;
+  }
+  .order-total {
+    font-size: 1rem;
+  }
+
+  .order-summary {
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
+
+  .order-item {
+    padding: 0.5rem;
+  }
+  .item-title {
+    font-size: 0.85rem;
+  }
+  .item-author {
+    font-size: 0.75rem;
+  }
+  .item-price {
+    font-size: 0.9rem;
+  }
+  .item-old-price {
+    font-size: 0.75rem;
+  }
+  .item-discount {
+    font-size: 0.7rem;
+  }
+
+  .order-cancel-btn {
+    font-size: 0.85rem;
+    padding: 0.6rem;
+  }
+
+  .total-row {
+    font-size: 0.85rem;
+  }
+  .total-row.final {
+    font-size: 1rem;
   }
 }

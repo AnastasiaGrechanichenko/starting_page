@@ -1,4 +1,3 @@
-
 .favorites-page {
   display: flex;
   flex-direction: column;
@@ -7,7 +6,6 @@
   padding: 2rem;
   min-height: 60vh;
 }
-
 
 .favorites-header {
   display: flex;
@@ -39,13 +37,11 @@
   font-size: 0.9rem;
   transition: all 0.2s ease;
 }
-
 .clear-all-btn:hover {
   border-color: #e74c3c;
   color: #e74c3c;
   background: #fff0f0;
 }
-
 
 .favorites-loading,
 .favorites-page.empty {
@@ -67,7 +63,6 @@
   border-radius: 8px;
   transition: all 0.2s ease;
 }
-
 .to-catalog:hover {
   background: #4a90d9;
   color: #fff;
@@ -79,7 +74,6 @@
   gap: 1.5rem;
 }
 
-
 .favorite-card {
   display: flex;
   flex-direction: column;
@@ -90,30 +84,25 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-
 .favorite-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
-
 
 .favorite-image-link {
   display: flex;
   height: 260px;
   overflow: hidden;
 }
-
 .favorite-image-link img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.3s ease;
 }
-
 .favorite-image-link:hover img {
   transform: scale(1.05);
 }
-
 
 .favorite-info {
   display: flex;
@@ -133,7 +122,6 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-
 .favorite-title:hover {
   color: #4a90d9;
 }
@@ -144,26 +132,22 @@
   margin: 0;
 }
 
-
 .favorite-prices {
   display: flex;
   align-items: center;
   gap: 0.5rem;
   margin-top: 0.2rem;
 }
-
 .favorite-old-price {
   color: #999;
   text-decoration: line-through;
   font-size: 0.85rem;
 }
-
 .favorite-price {
   color: #e74c3c;
   font-weight: 700;
   font-size: 1.1rem;
 }
-
 
 .remove-fav-btn {
   margin-top: 0.5rem;
@@ -181,25 +165,48 @@
   justify-content: center;
   gap: 0.4rem;
 }
-
 .remove-fav-btn:hover {
   background: #ffeaea;
   border-color: #e74c3c;
   color: #e74c3c;
 }
-
 .remove-fav-btn svg {
   color: #e74c3c;
   font-size: 0.9rem;
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .favorites-page {
+    padding: 1.5rem;
+  }
+  .favorites-page h1 {
+    font-size: 1.6rem;
+  }
+  .favorite-card {
+    width: 180px;
+  }
+  .favorite-image-link {
+    height: 220px;
+  }
 }
 
 @media (max-width: 768px) {
   .favorites-page {
     padding: 1rem;
   }
-
   .favorites-page h1 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+  }
+
+  .favorites-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+  .clear-all-btn {
+    width: 100%;
+    text-align: center;
+    padding: 0.6rem;
   }
 
   .favorites-list {
@@ -208,9 +215,9 @@
   }
 
   .favorite-card {
-    width: 160px;
+    width: calc(50% - 0.5rem);
+    max-width: 200px;
   }
-
   .favorite-image-link {
     height: 200px;
   }
@@ -218,14 +225,63 @@
   .favorite-info {
     padding: 0.75rem;
   }
+  .favorite-title {
+    font-size: 0.9rem;
+  }
+  .favorite-price {
+    font-size: 1rem;
+  }
+  .remove-fav-btn {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .favorites-loading,
+  .favorites-page.empty {
+    padding: 2rem;
+  }
 }
 
 @media (max-width: 480px) {
-  .favorite-card {
-    width: 140px;
+  .favorites-page {
+    padding: 0.75rem;
+  }
+  .favorites-page h1 {
+    font-size: 1.2rem;
   }
 
+  .favorite-card {
+    width: calc(50% - 0.4rem);
+    max-width: 160px;
+  }
   .favorite-image-link {
-    height: 180px;
+    height: 160px;
+  }
+
+  .favorite-title {
+    font-size: 0.8rem;
+  }
+  .favorite-author {
+    font-size: 0.75rem;
+  }
+  .favorite-price {
+    font-size: 0.9rem;
+  }
+  .favorite-old-price {
+    font-size: 0.75rem;
+  }
+
+  .remove-fav-btn {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.6rem;
+  }
+
+  .favorites-loading,
+  .favorites-page.empty {
+    padding: 1.5rem;
+  }
+  .to-catalog {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
   }
 }
