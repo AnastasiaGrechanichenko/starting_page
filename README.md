@@ -1,16 +1,49 @@
-# React + Vite
+# Bookstore_frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Книжный интернет-магазин созданный на базе React.
 
-Currently, two official plugins are available:
+## Функционал
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Каталог книг с фильтрацией
+- Корзина 
+- Оформление заказа (форма доставки + имитация оплаты)
+- Личный кабинет (редактирование профиля)
+- Избранное
+- История заказов
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Стек
 
-## Expanding the ESLint configuration
+| **Frontend** |
+|--------------|
+| React 18 |
+| React Router v6 |
+| Zustand |
+| React Icons |
+| CSS (Flexbox) |
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Запуск локально
+
+### 1.Установка pnpm 
+```bash
+
+npm install -g pnpm
+
+```
+
+### 2.Установка зависимостей
+```bash
+pnpm install
+```
+### 3.Запуск проекта 
+```bash
+pnpm run dev
+```
+
+
+О проекте:
+Бэкенд находится в отдельном репозитории
+[bookstore-backend](https://github.com/AnastasiaGrechanichenko/Bookstore_backend)
